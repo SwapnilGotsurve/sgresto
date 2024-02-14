@@ -1,0 +1,511 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+/* #loadercontainer{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(39, 39, 39, 0.932);
+    z-index: 99;
+    position: fixed;
+} */
+/*  
+#loader {
+    background-color: rgb(0, 0, 0);
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 100;
+    position: fixed;
+   top: 35%;
+   left: 50%;
+    z-index: 100;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid #d1914b;
+    box-sizing: border-box;
+    --c:no-repeat radial-gradient(farthest-side, #d64123 94%,#0000);
+    --b:no-repeat radial-gradient(farthest-side, #000 94%,#0000);
+    background:
+      var(--c) 11px 15px,
+      var(--b) 6px 15px,    
+      var(--c) 35px 23px,
+      var(--b) 29px 15px,    
+      var(--c) 11px 46px,
+      var(--b) 11px 34px,    
+      var(--c) 36px 0px,
+      var(--b) 50px 31px,
+      var(--c) 47px 43px,
+      var(--b) 31px 48px,    
+      #f6d353; 
+    background-size: 15px 15px,6px 6px;
+    animation: l4 0.8s  infinite;
+    scale: 2;
+    
+  }
+  @keyframes l4 {
+    0%     {-webkit-mask:conic-gradient(#0000 0     ,#000 0)}
+    16.67% {-webkit-mask:conic-gradient(#0000 60deg ,#000 0)}
+    33.33% {-webkit-mask:conic-gradient(#0000 120deg,#000 0)}
+    50%    {-webkit-mask:conic-gradient(#0000 180deg,#000 0)}
+    66.67% {-webkit-mask:conic-gradient(#0000 240deg,#000 0)}
+    83.33% {-webkit-mask:conic-gradient(#0000 300deg,#000 0)}
+    100%   {-webkit-mask:conic-gradient(#0000 360deg,#000 0)}
+  } */
+
+  /* HTML: <div class="loader"></div> */
+#loader{
+
+    position: fixed;
+    scale: 1.7;
+     top: 50%;
+    left: 50%; 
+    /* margin: 1px auto; */
+    z-index: 100;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+      radial-gradient(farthest-side,#ffa516 94%,#0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%,#ffa516);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation: l13 1s infinite linear;
+  }
+
+  
+  @keyframes l13{ 
+    100%{transform: rotate(1turn)}
+  }
+
+   #loadercontainer{
+      background-color: rgba(19, 19, 19, 0.87);
+      height: 100%;
+      width: 100%;
+      z-index: 99;
+      position: fixed;
+      /* margin: 1px auto; */
+  }
+
+  .LOGO{
+      background-image: url("logo-removebg-preview__2_-removebg-preview\ \(1\).png");
+      height: 50px;
+      width: 240px;
+      /* border: 2px solid blue; */
+      background-repeat: no-repeat;
+      background-size: 3rem;
+      margin-left: 3%;
+  }
+header{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(39, 39, 39);
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.0px solid gray;
+    box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+    z-index: 2;
+}
+header h1{
+    margin-top: 2%;
+    font-size: 1.5rem;
+    margin-left: 60px;
+    
+    color: white;
+    font-family:cursive;
+}
+.opt-container{
+    margin-right: 5%;
+}
+.opt-container a{
+   margin: 40px;
+   font-size: 1.1rem;
+   color: rgb(255, 169, 39);
+   font-family: Arial, Helvetica, sans-serif;
+}
+.opt-container a:hover{
+    color:rgba(255, 255, 255, 0.911);
+   
+    border-bottom: 1.5px solid rgba(255, 196, 2, 0.911);
+}
+.opt-container .fa-solid{
+    font-size: 2.5rem;
+    position: absolute;
+    /* padding-bottom: 1%;*/
+    
+}
+.fa-solid h4{
+ font-size: 1.2rem;
+ transform: translateY(-37px);
+ /* transform: translateX(-20px); */
+ color: red;
+ left:19px;
+ position: absolute;
+
+}
+.black-png{
+    height:750px ;
+    width: 98.5vw;
+    z-index: 0;
+    background: url("png-image.png");
+    background-position: left;
+    
+    background-size: 95rem;
+    background-repeat: no-repeat;
+    background-position: left top;
+    position: absolute;
+    margin-top: 2%;
+}
+
+.rotate-img{
+    background: url("rotate.png");
+    background-size: cover;
+    height: 29rem;
+    width: 29rem;
+    left: 55rem;
+    top: 13%;
+    filter: brightness(-150px);
+    /* margin-top: 0%; */
+    /* border: 2px solid yellow; */
+    position: absolute;
+    z-index: 1;
+   transform: translateY(-500px);
+   animation-name: rotate-img;
+   animation-duration: 5s;
+   animation-timing-function: ease-in-out;
+   animation-delay: 3s;
+   animation-iteration-count: infinite;
+}
+
+.rotate-center {
+	-webkit-animation: rotate-center 11s linear infinite both;
+	        animation: rotate-center 11s linear infinite both;
+}
+ @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+.hero-img{
+    height:750px ;
+    width: 98.5vw;
+    z-index: 0;
+    background: url("hero3.jpg");
+    background-size: 92.6rem;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: absolute;
+    margin-top: 2%;
+    /* border: 2px solid aqua; */
+
+}
+.hero-img p{
+    z-index: 2;
+    margin-top:12%;
+    color: white;
+    margin-left:6%;
+    font-size: 2rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+.hero-img h1{
+    color: rgb(255, 157, 45);
+    z-index: 2;
+    font-size: 5rem;
+    margin-left:5%;
+    font-family:fantasy ;
+    font-weight: 500;
+
+}
+.hero-img h2{
+    z-index: 2;
+    color: white;
+    margin-left:3%;
+    font-size: 3rem;
+    font-family:cursive;
+    color: rgb(255, 156, 99);
+    margin-top: 9%;
+}
+
+/* ___________our food page-------------- */
+.ourfoodpage{
+    height: 500px;
+    width: 100%;
+    background-color: rgb(255, 254, 254);
+    position: absolute;
+    margin-top: 53%;
+}
+.food-head{
+    height: 60px;
+   
+    background-color: rgb(255, 102, 32);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px groove white;
+    width: 100%;
+}
+.food-head h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 
+.slide-right {
+	-webkit-animation: slide-right 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+} */
+
+/* -------------our dishes page------------- */
+.our-dishespage{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    height: 1700px;
+    width: 100%;
+   
+     padding-left: 2.5%;
+    padding-top: 2%;
+   
+}
+.product{
+    height: 520px;
+    width: 400px;
+    /* border: 2px solid red; */
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 5px 20px;
+    margin-bottom: 8%;
+    background-color: rgb(255, 201, 169);
+}
+.product1 .product-img{
+    background:url("daal_tadka.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 40rem;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.product2 .product-img{
+    background:url("paneer.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 28rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product3 .product-img{
+    background:url("biryani.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 37.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product4 .product-img{
+    background:url("pizza.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 32rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product5 .product-img{
+    background:url("penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 37.7rem;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.product6 .product-img{
+    background:url("side-view-club-sandwich-with-salted-cucumbers-lemon-olives-round-white-plate.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 29rem;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+.product7 .product-img{
+    background:url("vertical-view-delicious-vegan-salad-plate-with-various-fresh-vegetables-dark-background.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 25rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product8 .product-img{
+    background:url("side-view-shawarma-with-fried-potatoes-board-cookware.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 28rem;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.product9 .product-img{
+    background:url("chicken-skewers-with-slices-sweet-peppers-dill.jpg");
+    height: 400px;
+    width: 400px;
+    border-radius:17px 17px 0 0;
+    background-size: 37.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+.rating i{
+    font-size: 10px;
+    color: rgb(14, 117, 0);
+    font-size: 1.2rem;
+    margin-top: 1%;
+
+   
+}
+.product h3{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 2%;
+    color: rgb(226, 35, 1);
+    font-family:sans-serif;
+}
+.pc-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.add-cartbutton{
+    margin-right: 20%;
+    width: 110px;
+    height: 30px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(255, 72, 0);
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.add-cartbutton:hover{
+    background-color: rgb(168, 48, 0);
+}
+.price{
+    margin-left: 25%;
+    color: rgb(28, 148, 13);
+}
+
+
+/* -----------footer-=-------------- */
+footer{
+    height: 390px;
+    width: 100%;
+    background-color: rgb(39, 39, 39);
+    color: white;
+   padding-top: 4%;
+
+
+}
+.contact-log{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    height: 100px;
+
+}
+footer p{
+   margin-left: 10%;
+    font-size: 17px;
+    font-family:sans-serif;
+    width: 600px;
+    line-height: 24px;
+   
+}
+.contact-log iframe{
+  margin-left: 10%;
+  margin-right: 7%;
+  margin-top: 2%;
+  transform: translateY(-150px);
+ 
+}
+.contact-log abbr{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.contact-log i{
+
+    font-size: 26px;
+    color: black;
+    
+}
+.contact-log i:hover{
+    color: grey;
+}
+section{
+    margin-left: 15%;
+    display: flex;
+    height: 50px;
+    border-radius: 10px;
+    width: 400px;
+background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4%;
+}
+
+footer h1{
+    margin-left:21%;
+    margin-top: 4%;
+    font-family: cursive;
+}
